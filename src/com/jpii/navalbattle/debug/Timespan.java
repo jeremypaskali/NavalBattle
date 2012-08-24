@@ -34,4 +34,10 @@ public class Timespan {
 		startTime = 0;
 		return TimeUnit.MILLISECONDS.convert(duration, TimeUnit.NANOSECONDS);
 	}
+	
+	public String stopFormatted() {
+		long duration = System.nanoTime() - startTime;
+		startTime = 0;
+		return " operation took: " + TimeUnit.MILLISECONDS.convert(duration, TimeUnit.NANOSECONDS);
+	}
 }
